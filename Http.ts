@@ -1,8 +1,5 @@
-/* A raw connection class.
- * You should use "Connect" class.
- */
 class Http {
-    public static getResp(url: string):string {
+    public static getResp(url: string): string {
         var urlO = new (eval("java.net.URL"))(url);
         var con = urlO.openConnection();
         var reader = new (eval("java.io.InputStreamReader"))(con.getInputStream(), "UTF-8");
@@ -11,11 +8,11 @@ class Http {
         while (true) {
             var r = reader.read(buf);
             if (r <= 0) break;
-            data.write(buf,0,r);
+            data.write(buf, 0, r);
         }
         return data.toString();
     }
-    public static postResp(url: string, send: string) {
+    public static postResp(url: string, send: string):string {
         var urlO = new (eval("java.net.URL"))(url);
         var con = urlO.openConnection();
         con.setDoOutput(true);
