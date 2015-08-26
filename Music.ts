@@ -53,7 +53,7 @@ class Music {
     public stop(): void {
         if (Music.system == "html5") {
             this.musicObj.pause();
-            this.musicObj.currentTime = this.musicObj.seekable.start();
+            this.musicObj.currentTime =0;
         } else if (Music.system == "android") {
             this.musicObj.pause();
             this.musicObj.seekTo(0);
